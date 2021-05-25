@@ -36,20 +36,25 @@
 					$user_email = $user['email'];
 					$user_password = $user['password'];
 					$user_full_name = $user['full_name'];
+					$user_active = $user['active'];
 
-					if ($email === $user_email) {
-						if (password_verify($password, $user_password)) {
-							$_SESSION['user_id'] = $user_id;
-							$_SESSION['user_email'] = $user_email;
-							$_SESSION['user_full_name'] = $user_full_name;
-							header("Location: index.php");
-							die();
+					if ($user_active === 1) {
+						if ($email === $user_email) {
+							if (password_verify($password, $user_password)) {
+								$_SESSION['user_id'] = $user_id;
+								$_SESSION['user_email'] = $user_email;
+								$_SESSION['user_full_name'] = $user_full_name;
+								header("Location: index.php");
+								die();
 
+							} else {
+								$msg = 'Incorrect Username or Password';
+							}
 						} else {
 							$msg = 'Incorrect Username or Password';
 						}
 					} else {
-						$msg = 'Incorrect Username or Password';
+						$msg = 'Please Activate your Account';
 					}
 				} else {
 					$msg = 'Incorrect Username or Password';
