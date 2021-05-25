@@ -1,3 +1,16 @@
+<?php
+	
+	include 'db_conn.php';
+
+	$ipaddress = $_SERVER['REMOTE_ADDR'];
+	$datetime = date("F j, Y, g:i a");
+	$useragent = $_SERVER['HTTP_USER_AGENT'];
+
+	$query = $conn->prepare("INSERT INTO visited_users (ip_address, date_time, Browser) VALUES (?, ?, ?)");
+	$query->execute([$ipaddress, $datetime, $useragent]);
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
