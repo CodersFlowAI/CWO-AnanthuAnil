@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+	<meta charset="UTF-8">
+	<title>Cyber Crime Agency Report Page</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="HandheldFriendly" content="true">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+	<link rel="stylesheet" href="./style.css">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
+	<script src="./script.js"></script>
+</head>
+<body>
+<div class="container-fluid cen padb">
+	<!-- Nav Bar -->
+	<nav class="navbar navbar-expand-md navbar-light bg-light">
+	    <img src="logo.png">
+	    <a href="#" class="navbar-brand"><b>Cyber Crime Agency</b></a>
+	    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+	        <span class="navbar-toggler-icon"></span>
+	    </button>
+
+	    <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+	        <div class="navbar-nav">
+	            <a href="#" class="nav-item nav-link active">Home</a>
+	            <a href="#" class="nav-item nav-link">Profile</a>
+	            <div class="nav-item dropdown">
+	                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Messages</a>
+	                <div class="dropdown-menu">
+	                    <a href="#" class="dropdown-item">Inbox</a>
+	                    <a href="#" class="dropdown-item">Sent</a>
+	                    <a href="#" class="dropdown-item">Drafts</a>
+	                </div>
+	            </div>
+	        </div>
+	        <form class="form-inline">
+	            <div class="input-group">                    
+	                <input type="text" class="form-control" placeholder="Search">
+	                <div class="input-group-append">
+	                    <button type="button" class="btn btn-secondary"><i class="fa fa-search"></i></button>
+	                </div>
+	            </div>
+	        </form>
+	        <div class="navbar-nav">
+	            <a href="#" class="nav-item nav-link">Login</a>
+	        </div>
+	    </div>
+	</nav>
+	<br>
+	<!-- End Nav Bar -->
+
+	<!-- Sliding Tabs -->
+	<div class="container">
+		<div class="row">
+			<div class="tabs">
+				<div class="col rad glider glider1" id="rad1" onclick="gliderFunction1()">
+					<label class="card-text tab" for="radio-1">
+						<input type="radio" id="radio-1" name="tabs" class="checked inline" />Anonymous Report<!--<span class="notification">2</span>-->
+					</label>
+				</div>
+				<div class="col rad glider" id="rad2" onclick="gliderFunction2()">
+					<label class="card-text tab" for="radio-2">
+						<input type="radio" id="radio-2" name="tabs" class="checked inline" />Report & Track
+					</label>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	<!-- End Sliding Tabs -->
+
+	<!-- Card form -->
+	<div class="flex-wrap">
+
+		<!-- Anon Report Form -->
+		<form class="color-card" id="form_1">
+			
+			<!-- Title -->
+			<div class="color-card__header">
+				<h1>Anonymous Report Form</h1>
+			</div>
+			<!-- Title End -->
+
+			<!-- Anon Form 1 -->
+			<div class="" id="preview-card-1">
+			<div class="color-card__header">
+				<h3>Incident Details</h3>
+			</div>
+			<div class="color-card__body">
+				<label for="anon-complaincat" class="card-text">Category of Complain
+					<select type="dropdown" name="anon-complaincat" required="required">
+						<option disabled selected value> -- Select an Option -- </option>
+						<option value="CP">Child Pornography</option>
+						<option value="SAC">Sexually Abusive Content</option>
+						<option value="PTP">Publishing or Transmitting Porn</option>
+					</select>
+				</label>
+				<label for="anon-date" class="card-text">Date of Incident (Approx Date is fine)
+					<input type="date" name="anon-date" required="required" placeholder="-- Date --" />
+				</label>
+				<label for="anon-time" class="card-text">Time of Incident (Approx Time is fine)
+					<input type="time" name="anon-time" required="required" class="width100" placeholder="-- Hour --" />
+				</label>
+				<label for="anon-delay" class="card-text">Reason For Delay In Report (If Any)
+					<input type="text" name="anon-delay" class="width100" />
+				</label>
+				<label for="anon-state" class="card-text">State or UT
+					<select type="dropdown" name="anon-atate" required="required">
+						<option disabled selected value> -- Select an Option -- </option>
+						<option value="Op1">Option 1</option>
+						<option value="Op2">Option 1</option>
+						<option value="Op3">Option 1</option>
+					</select>
+				</label>
+				<label for="anon-district" class="card-text">District
+					<select type="dropdown" name="anon-district" required="required">
+						<option disabled selected value> -- Select an Option -- </option>
+						<option value="Op1">Option 1</option>
+						<option value="Op2">Option 1</option>
+						<option value="Op3">Option 1</option>
+					</select>
+				</label>
+				<label for="anon-platform" class="card-text">Platform where crime took place
+					<input type="card-text" name="anon-platform" class="width100" />
+				</label>
+				<label for="anon-upload" class="card-text">Evidence Upload
+					<input type="file" name="anon-upload" required="required" class="width100" />
+				</label>
+				<label for="anon-info" class="card-text">Additional Info (If Any)
+					<input type="text" name="anon-info" required="required" class="width100" maxlength="1500" />
+				</label>
+			</div>
+			<div class="color-card__header">
+				<h3>Suspect Details</h3>
+			</div>
+			<div class="color-card__body">
+				<label for="anon-name" class="card-text">Name of Suspect
+					<input type="text" name="anon-name" class="width100" />
+				</label>
+				<label for="anon-contact" class="card-text">Suspect's Contact/ID
+					<select type="dropdown" name="anon-contact">
+						<option disabled selected value> -- Select an Option -- </option>
+						<option value="Op1">Email</option>
+						<option value="Op2">Mobile Number</option>
+						<option value="Op3">Aadhar Number</option>
+					</select>
+				</label>
+				<label for="anon-contactno" class="card-text">Contact/ID Number
+					<input type="text" name="anon-contactno" class="width100" />
+				</label>
+				<label for="anon-pic" class="card-text">Suspect's Photo
+					<input type="file" name="anon-pic" class="width100" />
+				</label>
+				<label for="anon-sinfo" class="card-text">Additional Info (If Any)
+					<input type="text" name="anon-sinfo" class="width100" maxlength="1500" />
+				</label>
+			</div><a class="color-card__preview-button card-text" href="#0" id="preview-button-1" onclick="buttonFunction1()">Preview</a>
+			</div>
+			<!-- Anon Form 1 End -->
+
+			<!-- Anon Form P -->
+			<div class="hidden" id="preview-card-2">
+			<div class="color-card__header">
+				<h3>Preview</h3>
+			</div>
+			<div class="color-card__body">
+				<label for="anon-p-complaincat" class="card-text">Category of Complain
+					<input type="text" name="anon-p-complaincat" class="width100" required="required" value="" disabled />
+				</label>
+				<label for="anon-p-date" class="card-text">Date of Incident (Approx Date is fine)
+					<input type="text" name="anon-p-date" required="required" value="" disabled />
+				</label>
+				<label for="anon-p-time" class="card-text">Time of Incident (Approx Time is fine)
+					<input type="text" name="anon-p-time" required="required" class="width100"  value="" disabled />
+				</label>
+				<label for="anon-p-delay" class="card-text">Reason For Delay In Report (If Any)
+					<input type="text" name="anon-p-delay" class="width100"  value="" disabled />
+				</label>
+				<label for="anon-p-state" class="card-text">State or UT
+					<input type="text" name="anon-p-atate" required="required" class="width100" value="" disabled />
+				</label>
+				<label for="anon-p-district" class="card-text">District
+					<input type="text" name="anon-p-district" required="required" class="width100" value="" disabled />
+				</label>
+				<label for="anon-p-platform" class="card-text">Platform where crime took place
+					<input type="text" name="anon-p-platform" required="required" value="" disabled />
+				</label>
+				<label for="anon-p-upload" class="card-text">Evidence Upload
+					<input type="text" name="anon-p-upload" required="required" class="width100"  value="" disabled />
+				</label>
+				<label for="anon-p-info" class="card-text">Additional Info (If Any)
+					<input type="text" name="anon-p-info" required="required" class="width100" maxlength="1500"  value="" disabled />
+				</label>
+				<label for="anon-p-name" class="card-text">Name of Suspect
+					<input type="text" name="anon-p-name" class="width100"  value="" disabled />
+				</label>
+				<label for="anon-p-contact" class="card-text">Suspect's Contact/ID
+					<input type="text" name="anon-p-contact" class="width100" value="" disabled />
+				</label>
+				<label for="anon-p-contactno" class="card-text">Contact/ID Number
+					<input type="text" name="anon-p-contactno" class="width100"  value="" disabled />
+				</label>
+				<label for="anon-p-pic" class="card-text">Suspect's Photo
+					<input type="text" name="anon-p-pic" class="width100"  value="" disabled />
+				</label>
+				<label for="anon-p-sinfo" class="card-text">Additional Info (If Any)
+					<input type="text" name="anon-p-sinfo" class="width100" maxlength="1500"  value="" disabled />
+				</label>
+			</div><a class="color-card__button card-text" href="#0" id="submit-button">done</a>
+			</div>
+			<!-- Anon Form P End -->
+
+			<div class="success__tick">
+				<h1>DONE!</h1>
+				<svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.1" x="0px" y="0px" viewBox="-75 20 250 50"><g transform="translate(0,-952.36218)"><path class="path" d="m 75.735759,983.36178 a 2.0002,2.0002 0 0 0 -1.1562,0.5937 c -10.261598,10.2838 -22.311598,22.29442 -32.718798,32.71882 L 25.26696,1002.8305 a 2.0085749,2.0085749 0 1 0 -2.5624,3.0938 l 18.000001,15 a 2.0002,2.0002 0 0 0 2.6874,-0.125 c 10.6635,-10.6864 23.3302,-23.30712 33.999998,-34.00002 a 2.0002,2.0002 0 0 0 -1.6562,-3.4375 z" fill="transparent" fill-opacity="1" stroke="#ffffff" marker="none" visibility="visible" display="inline" overflow="visible"/></g></svg>
+				<h2>Thank You for reporting!<br>You have taken an extra step to keeping our country safe!</h2><a href="#0" id="demo-reset">Report another cybercrime?</a>
+			</div>
+		</form>
+		<!-- Anon Rport Form End -->
+
+		<!-- Report Form -->
+		<form class="color-card hidden" id="form_2">
+				
+			<!-- Title -->
+			<div class="color-card__header">
+				<h1>Report & Track Form</h1>
+			</div>
+			<!-- Title End -->
+
+			<!-- Form 1 -->
+			<div class="" id="preview-card-3">
+			<div class="color-card__header">
+				<h3>Incident Details</h3>
+			</div>
+			<div class="color-card__body">
+				<label for="anon-complaincat" class="card-text">Category of Complain
+					<select type="dropdown" name="anon-complaincat" required="required">
+						<option disabled selected value> -- Select an Option -- </option>
+						<option value="CP">Child Pornography</option>
+						<option value="SAC">Sexually Abusive Content</option>
+						<option value="PTP">Publishing or Transmitting Porn</option>
+					</select>
+				</label>
+				<label for="anon-date" class="card-text">Date of Incident (Approx Date is fine)
+					<input type="date" name="anon-date" required="required" placeholder="-- Date --" />
+				</label>
+				<label for="anon-time" class="card-text">Time of Incident (Approx Time is fine)
+					<input type="time" name="anon-time" required="required" class="width100" placeholder="-- Hour --" />
+				</label>
+				<label for="anon-delay" class="card-text">Reason For Delay In Report (If Any)
+					<input type="text" name="anon-delay" class="width100" />
+				</label>
+				<label for="anon-state" class="card-text">State or UT
+					<select type="dropdown" name="anon-atate" required="required">
+						<option disabled selected value> -- Select an Option -- </option>
+						<option value="Op1">Option 1</option>
+						<option value="Op2">Option 1</option>
+						<option value="Op3">Option 1</option>
+					</select>
+				</label>
+				<label for="anon-district" class="card-text">District
+					<select type="dropdown" name="anon-district" required="required">
+						<option disabled selected value> -- Select an Option -- </option>
+						<option value="Op1">Option 1</option>
+						<option value="Op2">Option 1</option>
+						<option value="Op3">Option 1</option>
+					</select>
+				</label>
+				<label for="anon-platform" class="card-text">Platform where crime took place
+					<input type="card-text" name="anon-platform" class="width100" />
+				</label>
+				<label for="anon-upload" class="card-text">Evidence Upload
+					<input type="file" name="anon-upload" required="required" class="width100" />
+				</label>
+				<label for="anon-info" class="card-text">Additional Info (If Any)
+					<input type="text" name="anon-info" required="required" class="width100" maxlength="1500" />
+				</label>
+			</div>
+			<div class="color-card__header">
+				<h3>Suspect Details</h3>
+			</div>
+			<div class="color-card__body">
+				<label for="anon-name" class="card-text">Name of Suspect
+					<input type="text" name="anon-name" class="width100" />
+				</label>
+				<label for="anon-contact" class="card-text">Suspect's Contact/ID
+					<select type="dropdown" name="anon-contact">
+						<option disabled selected value> -- Select an Option -- </option>
+						<option value="Op1">Email</option>
+						<option value="Op2">Mobile Number</option>
+						<option value="Op3">Aadhar Number</option>
+					</select>
+				</label>
+				<label for="anon-contactno" class="card-text">Contact/ID Number
+					<input type="text" name="anon-contactno" class="width100" />
+				</label>
+				<label for="anon-pic" class="card-text">Suspect's Photo
+					<input type="file" name="anon-pic" class="width100" />
+				</label>
+				<label for="anon-sinfo" class="card-text">Additional Info (If Any)
+					<input type="text" name="anon-sinfo" class="width100" maxlength="1500" />
+				</label>
+			</div><a class="color-card__preview-button card-text" href="#0" id="preview-button-2" onclick="buttonFunction2()">Preview</a>
+			</div>
+			<!-- Form 1 End -->
+
+			<!-- Form P -->
+			<div class="hidden" id="preview-card-4">
+			<div class="color-card__header">
+				<h3>Preview</h3>
+			</div>
+			<div class="color-card__body">
+				<label for="anon-p-complaincat" class="card-text">Category of Complain
+					<input type="text" name="anon-p-complaincat" class="width100" required="required" value="" disabled />
+				</label>
+				<label for="anon-p-date" class="card-text">Date of Incident (Approx Date is fine)
+					<input type="text" name="anon-p-date" required="required" value="" disabled />
+				</label>
+				<label for="anon-p-time" class="card-text">Time of Incident (Approx Time is fine)
+					<input type="text" name="anon-p-time" required="required" class="width100"  value="" disabled />
+				</label>
+				<label for="anon-p-delay" class="card-text">Reason For Delay In Report (If Any)
+					<input type="text" name="anon-p-delay" class="width100"  value="" disabled />
+				</label>
+				<label for="anon-p-state" class="card-text">State or UT
+					<input type="text" name="anon-p-atate" required="required" class="width100" value="" disabled />
+				</label>
+				<label for="anon-p-district" class="card-text">District
+					<input type="text" name="anon-p-district" required="required" class="width100" value="" disabled />
+				</label>
+				<label for="anon-p-platform" class="card-text">Platform where crime took place
+					<input type="text" name="anon-p-platform" required="required" value="" disabled />
+				</label>
+				<label for="anon-p-upload" class="card-text">Evidence Upload
+					<input type="text" name="anon-p-upload" required="required" class="width100"  value="" disabled />
+				</label>
+				<label for="anon-p-info" class="card-text">Additional Info (If Any)
+					<input type="text" name="anon-p-info" required="required" class="width100" maxlength="1500"  value="" disabled />
+				</label>
+				<label for="anon-p-name" class="card-text">Name of Suspect
+					<input type="text" name="anon-p-name" class="width100"  value="" disabled />
+				</label>
+				<label for="anon-p-contact" class="card-text">Suspect's Contact/ID
+					<input type="text" name="anon-p-contact" class="width100" value="" disabled />
+				</label>
+				<label for="anon-p-contactno" class="card-text">Contact/ID Number
+					<input type="text" name="anon-p-contactno" class="width100"  value="" disabled />
+				</label>
+				<label for="anon-p-pic" class="card-text">Suspect's Photo
+					<input type="text" name="anon-p-pic" class="width100"  value="" disabled />
+				</label>
+				<label for="anon-p-sinfo" class="card-text">Additional Info (If Any)
+					<input type="text" name="anon-p-sinfo" class="width100" maxlength="1500"  value="" disabled />
+				</label>
+			</div><a class="color-card__button card-text" href="#0" id="submit-buttony">done</a>
+			</div>
+			<!-- Form P End -->
+
+			<div class="success__tick">
+				<h1>DONE!</h1>
+				<svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.1" x="0px" y="0px" viewBox="-75 20 250 50"><g transform="translate(0,-952.36218)"><path class="path" d="m 75.735759,983.36178 a 2.0002,2.0002 0 0 0 -1.1562,0.5937 c -10.261598,10.2838 -22.311598,22.29442 -32.718798,32.71882 L 25.26696,1002.8305 a 2.0085749,2.0085749 0 1 0 -2.5624,3.0938 l 18.000001,15 a 2.0002,2.0002 0 0 0 2.6874,-0.125 c 10.6635,-10.6864 23.3302,-23.30712 33.999998,-34.00002 a 2.0002,2.0002 0 0 0 -1.6562,-3.4375 z" fill="transparent" fill-opacity="1" stroke="#ffffff" marker="none" visibility="visible" display="inline" overflow="visible"/></g></svg>
+				<h2>Thank You for reporting!<br>You have taken an extra step to keeping our country safe!</h2><a href="#0" id="demo-resety">Report another cybercrime?</a>
+			</div>
+		</form>
+		<!-- Report Form End -->
+
+	</div>
+	</div>
+	<!-- End Form -->
+
+		<script>
+			var element1 = document.getElementById("rad1");
+			var checkedelement1 = document.getElementById("radio-1");
+			var formelement1 = document.getElementById("form_1");
+			var element2 = document.getElementById("rad2");
+			var checkedelement2 = document.getElementById("radio-2");
+			var formelement2 = document.getElementById("form_2");
+
+			var preview1 = document.getElementById("preview-card-1");
+			var preview2 = document.getElementById("preview-card-2");
+			var preview3 = document.getElementById("preview-card-3");
+			var preview4 = document.getElementById("preview-card-4");
+			var bpreview1 = document.getElementById("preview-button-1");
+			var bpreview2 = document.getElementById("preview-button-2");
+
+			function gliderFunction1() {
+				checkedelement1.classList.add("checked");
+				checkedelement2.classList.remove("checked");
+				formelement2.classList.add("hidden");
+				formelement1.classList.remove("hidden");
+				if (checkedelement1.classList.contains("checked")) {
+					element1.classList.add("glider1");
+					if (element2.classList.contains("glider2")) {
+						element2.classList.remove("glider2");
+					}
+				}
+			}
+			
+			function gliderFunction2() {
+				checkedelement1.classList.remove("checked");
+				checkedelement2.classList.add("checked");
+				formelement1.classList.add("hidden");
+				formelement2.classList.remove("hidden");
+				if (checkedelement2.classList.contains("checked")) {
+					element2.classList.add("glider2");
+					if (element1.classList.contains("glider1")) {
+						element1.classList.remove("glider1");
+					}
+				}
+			}
+
+			function buttonFunction1(){
+				preview2.classList.remove("hidden");
+				preview1.classList.add("hidden");
+				document.body.scrollTop = 0;
+				document.documentElement.scrollTop = 0;
+			}
+
+			function buttonFunction2(){
+				preview4.classList.remove("hidden");
+				preview3.classList.add("hidden");
+				document.body.scrollTop = 0;
+				document.documentElement.scrollTop = 0;
+			}
+
+		</script>
+</div>
+</body>
+</html>
