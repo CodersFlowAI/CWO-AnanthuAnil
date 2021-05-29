@@ -51,7 +51,7 @@
 					$user_full_name = $user['full_name'];
 					$user_active = $user['active'];
 
-					if ($user_active === 1) {
+					if ($user_active == 1) {
 						if ($email === $user_email) {
 							if (password_verify($password, $user_password)) {
 								$_SESSION['user_id'] = $user_id;
