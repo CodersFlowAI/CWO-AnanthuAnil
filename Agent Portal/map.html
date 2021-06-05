@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>jVectorMap demo</title>
+  <link rel="stylesheet" media="all" href="map/jquery-jvectormap.css"/>
+  <script src="map/jquery-1.8.2.js"></script>
+  <script src="map/jquery-jvectormap.js"></script>
+  <script src="map/jquery-mousewheel.js"></script>
+
+  <script src="map/jvectormap.js"></script>
+
+  <script src="map/abstract-element.js"></script>
+  <script src="map/abstract-canvas-element.js"></script>
+  <script src="map/abstract-shape-element.js"></script>
+
+  <script src="map/svg-element.js"></script>
+  <script src="map/svg-group-element.js"></script>
+  <script src="map/svg-canvas-element.js"></script>
+  <script src="map/svg-shape-element.js"></script>
+  <script src="map/svg-path-element.js"></script>
+  <script src="map/svg-circle-element.js"></script>
+  <script src="map/svg-image-element.js"></script>
+  <script src="map/svg-text-element.js"></script>
+
+  <script src="map/vml-element.js"></script>
+  <script src="map/vml-group-element.js"></script>
+  <script src="map/vml-canvas-element.js"></script>
+  <script src="map/vml-shape-element.js"></script>
+  <script src="map/vml-path-element.js"></script>
+  <script src="map/vml-circle-element.js"></script>
+  <script src="map/vml-image-element.js"></script>
+
+  <script src="map/map-object.js"></script>
+  <script src="map/region.js"></script>
+  <script src="map/marker.js"></script>
+
+  <script src="map/vector-canvas.js"></script>
+  <script src="map/simple-scale.js"></script>
+  <script src="map/ordinal-scale.js"></script>
+  <script src="map/numeric-scale.js"></script>
+  <script src="map/color-scale.js"></script>
+  <script src="map/legend.js"></script>
+  <script src="map/data-series.js"></script>
+  <script src="map/proj.js"></script>
+  <script src="map/map.js"></script>
+
+  <script src="https://jvectormap.com/js/jquery-jvectormap-in-mill.js"></script>
+  <script>
+    jQuery.noConflict();
+    jQuery(function(){
+      var $ = jQuery;
+
+      $('#map').vectorMap({
+        map: 'in_mill',
+        panOnDrag: true,
+        backgroundColor:'#fff',
+        borderColor:'#000000',
+        fill:'#000000',
+        hoverOpacity:0.7,
+        selectedColor:'#666666',
+        normalizeFunction:'polynomial',
+       
+      });
+
+      var datacode = document.querySelectorAll('[data-code]');
+
+      var arraycolors = new Array();
+
+      arraycolors[0] = "#2487b4"; //IN-BR
+      arraycolors[1] = "#c8eeff"; //IN-PY
+      arraycolors[2] = "#2487b4"; //IN-DD
+      arraycolors[3] = "#003f5c"; //IN-DN
+      arraycolors[4] = "#c8eeff"; //IN-DL
+      arraycolors[5] = "#c8eeff"; //IN-NL
+      arraycolors[6] = "#2487b4"; //IN-WB
+      arraycolors[7] = "#c8eeff"; //IN-HR
+      arraycolors[8] = "#c8eeff"; //IN-HP
+      arraycolors[9] = "#003f5c"; //IN-AS
+      arraycolors[10] = "#c8eeff"; //IN-UT
+      arraycolors[11] = "#003f5c"; //IN-JH
+      arraycolors[12] = "#2487b4"; //IN-JK
+      arraycolors[13] = "#c8eeff"; //IN-UP
+      arraycolors[14] = "#003f5c"; //IN-SK
+      arraycolors[15] = "#0071a4"; //IN-MZ
+      arraycolors[16] = "#c8eeff"; //IN-CT
+      arraycolors[17] = "#54a6ca"; //IN-CH
+      arraycolors[18] = "#c8eeff"; //IN-GA
+      arraycolors[19] = "#003f5c"; //IN-GJ
+      arraycolors[20] = "#003f5c"; //IN-RJ
+      arraycolors[21] = "#0071a4"; //IN-MP
+      arraycolors[22] = "#54a6ca"; //IN-OR
+      arraycolors[23] = "#54a6ca"; //IN-TN
+      arraycolors[24] = "#0071a4"; //IN-AN
+      arraycolors[25] = "#003f5c"; //IN-AP
+      arraycolors[26] = "#c8eeff"; //IN-TR
+      arraycolors[27] = "#c8eeff"; //IN-AR
+      arraycolors[28] = "#0071a4"; //IN-KA
+      arraycolors[29] = "#54a6ca"; //IN-PB
+      arraycolors[30] = "#c8eeff"; //IN-ML
+      arraycolors[31] = "#0071a4"; //IN-MN
+      arraycolors[32] = "#0071a4"; //IN-MH
+      arraycolors[33] = "#c8eeff"; //IN-KL
+
+      for(var i=0;i<datacode.length;i++){
+        datacode[i].setAttribute('fill', arraycolors[i]);
+      } 
+
+    })
+
+
+  </script>
+</head>
+<body>
+  <div id="map" style="width: 600px; height: 400px">
+    <div class="jvectormap-legend-cnt jvectormap-legend-cnt-v">
+    <div class="jvectormap-legend">
+      <div class="jvectormap-legend-inner">
+        <div class="jvectormap-legend-title">Cyber Crime Rates</div>
+        <div class="jvectormap-legend-tick">
+          <div class="jvectormap-legend-tick-sample" style="background: rgb(200, 238, 255);"></div>
+          <div class="jvectormap-legend-tick-text">Less Than 100</div>
+        </div>
+        <div class="jvectormap-legend-tick">
+          <div class="jvectormap-legend-tick-sample" style="background: rgb(140, 201, 228);"></div>
+          <div class="jvectormap-legend-tick-text">Less Than 500</div>
+        </div>
+        <div class="jvectormap-legend-tick">
+            <div class="jvectormap-legend-tick-sample" style="background: rgb(84, 166, 202);"></div>
+            <div class="jvectormap-legend-tick-text">Less Than 1000 </div>
+        </div>
+        <div class="jvectormap-legend-tick">
+            <div class="jvectormap-legend-tick-sample" style="background: rgb(36, 135, 180);"></div>
+            <div class="jvectormap-legend-tick-text">Less Than 2000</div>
+        </div>
+        <div class="jvectormap-legend-tick">
+            <div class="jvectormap-legend-tick-sample" style="background: rgb(0, 113, 164);"></div>
+            <div class="jvectormap-legend-tick-text">Less Than 4000</div>
+        </div>
+        <div class="jvectormap-legend-tick">
+            <div class="jvectormap-legend-tick-sample" style="background: rgb(0, 63, 92);"></div>
+            <div class="jvectormap-legend-tick-text">More Than 4000</div>
+        </div>
+        <div style="clear: both;"></div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
